@@ -46,8 +46,6 @@ public class Sort {
     public static void bubbleSort2(String[] array) {
         int len = array.length - 1;
         for (int i = 0; i < len; i++) {
-            // System.out.print("len");
-            // System.out.print(len);
             for (int j = len; j > i; j--) {
                 // System.out.print("i");
                 // System.out.print(i);
@@ -69,8 +67,6 @@ public class Sort {
     public static void bubbleSort3(String[] array) {
         int len = array.length - 1;
         while (len > 0) {
-            // System.out.print("len");
-            // System.out.print(len);
             for (int i = 0; i < len; i++) {
                 // System.out.print("i");
                 // System.out.print(i);
@@ -91,7 +87,20 @@ public class Sort {
 
     // 選択ソート
     public static void selectionSort(String[] array) {
-
+        int len = array.length - 1;
+        for (int i = 0; i < len; i++) {
+            int j = i;
+            int minIndex = i;
+            while (j < len) {
+                if (array[i].compareTo(array[j + 1]) > 0) {
+                    minIndex = j + 1;
+                }
+                j++;
+            }
+            String tmp = array[minIndex];
+            array[minIndex] = array[i];
+            array[i] = tmp;
+        }      
     }
 
     // メイン
