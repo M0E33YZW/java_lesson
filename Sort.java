@@ -47,8 +47,6 @@ public class Sort {
         int len = array.length - 1;
         for (int i = 0; i < len; i++) {
             for (int j = len; j > i; j--) {
-                // System.out.print("i");
-                // System.out.print(i);
                 if (array[j].compareTo(array[j - 1]) < 0) {
                     // System.out.print("[");
                     // System.out.print(array[j]);
@@ -68,8 +66,6 @@ public class Sort {
         int len = array.length - 1;
         while (len > 0) {
             for (int i = 0; i < len; i++) {
-                // System.out.print("i");
-                // System.out.print(i);
                 if (array[i].compareTo(array[i + 1]) > 0) {
                     // System.out.print("[");
                     // System.out.print(array[i]);
@@ -89,13 +85,11 @@ public class Sort {
     public static void selectionSort(String[] array) {
         int len = array.length - 1;
         for (int i = 0; i < len; i++) {
-            int j = i;
             int minIndex = i;
-            while (j < len) {
-                if (array[i].compareTo(array[j + 1]) > 0) {
-                    minIndex = j + 1;
+            for (int j = i + 1; j <= len; j++) {
+                if (array[minIndex].compareTo(array[j]) > 0) {
+                    minIndex = j;
                 }
-                j++;
             }
             String tmp = array[minIndex];
             array[minIndex] = array[i];
